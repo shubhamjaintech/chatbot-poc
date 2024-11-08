@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Chatbot POC</title>
+    <style>
+        /* Basic page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Chat container */
+        .chat-container {
+            width: 100%;
+            max-width: 500px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Chatbox area */
+        #chatbox {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            max-height: 400px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* Individual message styling */
+        .message {
+            margin: 8px 0;
+            padding: 10px 15px;
+            border-radius: 12px;
+            max-width: 80%;
+        }
+
+        /* User and Bot message colors */
+        .message.user {
+            background-color: #daf8e3;
+            align-self: flex-end;
+            color: #2d3e4f;
+        }
+
+        .message.bot {
+            background-color: #e8f1fd;
+            align-self: flex-start;
+            color: #2d3e4f;
+        }
+
+        /* Input area */
+        .input-container {
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+
+        /* User input */
+        #userInput {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            resize: none;
+        }
+
+        /* Send button */
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div id="chatbox"></div>
+        <div class="input-container">
+            <textarea id="userInput" placeholder="Type your message..."></textarea>
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>
